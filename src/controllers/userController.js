@@ -21,8 +21,10 @@ module.exports = {
             response.send(400, {error: 'user not found'});
         }else{
             response.send(200, user);
-        }
-        
-        
+        }  
+    },
+
+    createUser(request, response){
+        response.send(200, {ok: 'true'})
     }
 };
