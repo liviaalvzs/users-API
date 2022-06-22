@@ -25,6 +25,13 @@ module.exports = {
     },
 
     createUser(request, response){
-        response.send(200, {ok: 'true'})
-    }
+        let body = ''
+        request.on('data', (chunk) => {
+            body += chunk;
+        });
+        request.on('end', () => {
+            body = JSON.parse(body);
+            response.send(200, body)
+        });
+    },
 };
