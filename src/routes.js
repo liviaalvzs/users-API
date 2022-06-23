@@ -13,8 +13,13 @@ module.exports = [
         handler: userController.getUserById,
     },
     {
-        endpoint: '/users', //placeholder
+        endpoint: '/users', 
         method: 'POST',
         handler: userController.createUser,
+    },
+    {
+        endpoint: '/users/:id', 
+        method: 'PUT',
+        handler: userController.updateUser,
     },
 ]
